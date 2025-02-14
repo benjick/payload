@@ -90,6 +90,7 @@ export const buildCreateMigration = ({
 
       if (!upSQL?.length && !downSQL?.length && !forceAcceptWarning) {
         if (skipEmpty) {
+          payload.logger.info({ msg: `No schema changes detected.` })
           process.exit(0)
         }
 
